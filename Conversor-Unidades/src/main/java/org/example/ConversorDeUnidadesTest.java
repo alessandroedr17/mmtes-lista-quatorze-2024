@@ -29,4 +29,14 @@ public class ConversorDeUnidadesTest {
         assertEquals(25.0, conversor.fahrenheitParaCelsius(77), 0.0001);
         assertEquals(0.0, conversor.fahrenheitParaCelsius(32), 0.0001);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testMetrosParaQuilometros_ValorNegativo() {
+        conversor.metrosParaQuilometros(-100);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testQuilometrosParaMetros_ValorNegativo() {
+        conversor.quilometrosParaMetros(-1);
+    }
 }
